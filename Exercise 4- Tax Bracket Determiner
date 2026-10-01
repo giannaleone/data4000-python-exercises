@@ -1,0 +1,36 @@
+def get_tax_bracket(income):
+    """Return the tax bracket as a string."""
+    if income < 0:
+        return "Invalid income."
+    elif income < 50000:
+        return "Low (10%)"
+    elif income < 100000:
+        return "Medium (20%)"
+    else:
+        return "High (30%)"
+ 
+ 
+def get_tax_rate(income):
+    """Return the tax rate as a decimal so we can calculate the estimated tax."""
+    if income < 50000:
+        return 0.10
+    elif income < 100000:
+        return 0.20
+    else:
+        return 0.30
+ 
+ 
+def get_bracket_with_deduction(income):
+    """Bonus: ternary expression adds a note if income is even (modulo check)."""
+    bracket = get_tax_bracket(income)
+    return bracket + " (Deduction Eligible)" if income % 2 == 0 else bracket
+ 
+ 
+income = float(input("What's your annual income? "))
+bracket = get_tax_bracket(income)
+ 
+if bracket == "Invalid income.":
+    print(bracket)
+else:
+    tax = income * get_tax_rate(income)
+    print(f"Your bracket: {bracket}. Estimated tax: {tax}")

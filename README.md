@@ -1,7 +1,7 @@
 # data4000-python-exercises
 
 
-# Descriptions
+### Descriptions
 
 # Exercise 1
  #  - calulates profit & profit margin from revenue & cost
